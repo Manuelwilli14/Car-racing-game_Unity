@@ -52,13 +52,17 @@ The car is driven by `Voitureprincipal.cs`, a MonoBehaviour script attached to t
 
 ---
 
-## ⚙️ Getting Started
- 
-1. **Clone or download** this repository.
-2. Open the project in **Unity** (recommended: Unity 2021 LTS or later).
-3. Open `Assets/Scenes/SampleScene.unity`.
-4. Assign `Voitureprincipal.cs` to your car GameObject if not already attached.
-5. Press **Play** and use `Z / S / Q / D` to drive.
+## Gesture Controller (Python)
+
+The `Scripts/HandDetector/` folder contains a standalone Python application that lets you **control the car with your hand** through a webcam, without touching the keyboard.
+
+### ⚙️How it works
+
+1. **`hand_detector.py`** captures webcam frames and runs them through Google MediaPipe's `HandLandmarker` model, extracting the 21 3D landmarks of the detected hand and drawing the skeleton overlay on screen.
+2. **`gesture_classifier.py`** interprets those landmarks.
+
+3. **`sender.py`** broadcasts the command string over **UDP** to `127.0.0.1:5052` so Unity can receive and act on it.
+4. **`main.py`** ties everything together in a loop: capture → detect → classify → send → display.
 
 
 ---
