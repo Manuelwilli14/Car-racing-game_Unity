@@ -61,6 +61,7 @@
   <ItemGroup>
     <Compile Include="Assets\Script\Voitureprincipal.cs" />
     <Compile Include="Assets\Script\LigneFranchie.cs" />
+    <Compile Include="Assets\Script\UDP_VoiturePrincipal.cs" />
     <Compile Include="Assets\Script\IAFoule.cs" />
   </ItemGroup>
   <ItemGroup>
